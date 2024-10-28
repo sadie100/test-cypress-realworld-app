@@ -10,9 +10,10 @@ describe("Cypress Studio Demo", function () {
   });
   it("create new transaction", function () {
     // Extend test with Cypress Studio
-    cy.compareSnapshot("header");
+    cy.compareSnapshot("1");
   });
   it("create new bank account", function () {
     // Extend test with Cypress Studio
+    cy.compareSnapshot("2");
   });
 });
