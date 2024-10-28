@@ -19,11 +19,11 @@ jobs:
       - name: setting hangul
         run: |
           sudo apt-get update
-          sudo apt-get install libfontenc1 libxfont1 xfonts-encodings xfonts-utils xfonts-base xfonts-75dpi
           sudo apt-get install -y language-pack-ko
           sudo locale-gen ko_KR.UTF-8
           # Instead of using vi, we'll use echo to append to the file
           echo "export LANG=ko_KR.UTF-8" | sudo tee -a /etc/default/locale
+          sudo apt-get install fonts-nanum fonts-nanum-coding fonts-nanum-extra
           reboot
       - name: install
         run: yarn
