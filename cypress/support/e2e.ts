@@ -2,6 +2,8 @@
 import "@cypress/code-coverage/support";
 import "./commands";
 import { isMobile } from "./utils";
+import compareSnapshotCommand from "cypress-image-diff-js";
+compareSnapshotCommand();
 
 beforeEach(() => {
   // cy.intercept middleware to remove 'if-none-match' headers from all requests
