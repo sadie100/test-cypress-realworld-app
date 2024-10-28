@@ -16,6 +16,17 @@ jobs:
         with:
           node-version: 20
           cache: "yarn"
+      - name: setting hangul
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y language-pack-ko
+          sudo locale-gen ko_KR.UTF-8
+          # Instead of using vi, we'll use echo to append to the file
+          echo "export LANG=ko_KR.UTF-8" | sudo tee -a /etc/profile
+          # Load the new language settings
+          source /etc/profile
+          # Verify the settings
+          echo "Current LANG setting: $LANG"
       - name: install
         run: yarn
       - name: Run Cypress tests
